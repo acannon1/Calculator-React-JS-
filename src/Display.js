@@ -1,14 +1,14 @@
 import React from 'react'
 import './Calc.css'
 
-const Display = ({number, v1, v2, op}) => {
+const Display = ({results, history}) => {
     return (
-        <div>
-            <div>
-                {v2} {op} {v1}
+        <div className="display">
+            <div className="history">
+                {history}
             </div>
             <div className="results">
-                {number}
+                {results}
             </div>
         </div>
     )

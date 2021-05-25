@@ -4,6 +4,7 @@ import Display from './Display.js'
 
 const Calculator = () => {
     const [display, setDisplay] = useState('');
+    const [history, setHistory] = useState('');
     const [op, setOp] = useState('');
     const [v1, setV1] = useState('');
     const [v2, setV2] = useState('');
@@ -15,6 +16,7 @@ const Calculator = () => {
             setV2('')
             setOp('')
             setDisplay('')
+            setHistory('')
         }
         else if (input === 'Delete') {
             let aaa = v1.substring(0, v1.length - 1)
@@ -31,8 +33,12 @@ const Calculator = () => {
             let aaa = 0;
 
             if((v1 === '') || (v2 === '')) {
-                if(op !== '=')
+                if(op !== '=') {
                     setV2(v1)
+                    setHistory(v1 + ' ' + input)
+                } else {
+                    setHistory(v2 + ' ' + input)
+                }
             }
             else {
                 if(op === '+') {
@@ -44,9 +50,16 @@ const Calculator = () => {
                 } else if(op === '/') {
                     aaa = parseFloat(v2) / parseFloat(v1)
                 }
+
                 setV2(String(aaa))
                 setDisplay(String(aaa))
+                setHistory(aaa + ' ' + input)
+            }            
+                
+            if(input === '=') {
+                setHistory(history + ' ' + v1 + ' = ' + aaa)
             }
+
             setV1('')
             setOp(input)
         }
@@ -58,8 +71,8 @@ const Calculator = () => {
     }
 
     return (
-        <div>
-            <Display number={display} v1={v1} v2={v2} op={op}/>
+        <div className="calculator">
+            <Display results={display} history={history}/>
             <Pad calcHandleClick={calcHandleClick}/>
         </div>
     );

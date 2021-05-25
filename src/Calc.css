@@ -1,34 +1,103 @@
-.calcBtn {
-    box-sizing: border-box;
-    width: 24%;
-    height: 95%;
-    margin: 1px;
-    display: inline-block;
+
+.calculator {
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: .5em;
+    background-color: darkgrey;
+}
+
+.btnDiv {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.calcDiv {
     background-color: rgba(238, 238, 239, 1);
 }
 
-.numberBtn {
-    box-sizing: border-box;
-    width: 24%;
-    height: 95%;
-    margin: 1px;
-    display: inline-block;
+.numberDiv {
     background-color: white;
 }
 
+button {
+    width: 4em;
+    height: 4em;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: .5em;
+    /* background-color: green; */
+}
+
+.button {
+    width: 4em;
+    height: 4em;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: .5em;
+    /* background-color: green; */
+
+}
+
+.numberBtn {
+    background-color: orange;
+}
+
+.calcBtn {
+    background-color: rgb(158, 157, 157);
+}
+
+.clearBtn {
+    background-color: rgb(247, 77, 77);
+}
+
+.equalBtn {
+    background-color: rgb(87, 87, 248);
+}
+
+.display {
+    height: 4em;
+    margin: 1em;
+    border: 4px solid darkgrey;
+    background-color: rgb(230, 235, 236);
+    border-radius: .5em;
+}
+
 .results {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100px;
-    /* border: solid #080808 10px; */
-    /* padding: 5px; */
-    margin: 1px;
+    /* box-sizing: border-box; */
+    /* width: 100%; */
+    /* height: 50%; */
+    /* margin: 1px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    font-size: 26px;
+}
+
+.history {
+    /* box-sizing: border-box; */
+    /* width: 100%; */
+    /* height: 50%; */
+    /* margin: 1px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
 }
 
 .pad {
-    min-height: 100vh;
+    display: table;
+    width: 100%;
 }
 
 .padRow {
-    height: 50px;
+    display: table-row;
+    height: 5em;
+    justify-content: center;
+    align-items: center;
 }
