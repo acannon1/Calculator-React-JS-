@@ -21,10 +21,10 @@ const Buttons = ({display, type, padHandleClick}) => {
                 }
                 onClick={btnHandleClick}
             >
-                {display == 'sqrt' ? <span>&#8730;</span> :
-                    display == 'x2' ? <span>x&#178;</span>:
-                    display == '/' ? <span>&#xf7;</span>:
-                    display == 'Delete' ? <span>&#8592;</span>:
+                {display === 'sqrt' ? <span>&#8730;</span> :
+                    display === 'x2' ? <span>x&#178;</span>:
+                    display === '/' ? <span>&#xf7;</span>:
+                    display === 'Delete' ? <span>&#8592;</span>:
                     display
                 }
             </button>

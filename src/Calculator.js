@@ -39,8 +39,11 @@ const Calculator = () => {
                 } else {
                     setHistory(v2 + ' ' + input)
                 }
+                console.log("here 1")
             }
             else {
+                console.log("here 3")
+                console.log("v2= " + v2 + " v1= " + v1)
                 if(op === '+') {
                     aaa = parseFloat(v2) + parseFloat(v1)
                 } else if(op === '-') {
@@ -57,13 +60,36 @@ const Calculator = () => {
             }            
                 
             if(input === '=') {
-                setHistory(history + ' ' + v1 + ' = ' + aaa)
+                setHistory(history + ' ' + v1 + ' = ')
             }
 
             setV1('')
             setOp(input)
-        }
-        else {
+        } else if(input === '+/-') {
+            let aaa = v1 * -1
+            setV1(aaa)
+            setDisplay(aaa)
+        } else if(input === 'x2') {
+            let aaa = parseFloat(display) * parseFloat(display)
+            aaa = String(aaa)
+            setV2(aaa)
+            setDisplay(aaa)
+            setHistory('sqr(' + display + ')')
+        } else if(input === '1/x') {
+            let aaa = 1/parseFloat(display)
+            setV2(aaa)
+            setDisplay(aaa)
+            setHistory('1/' + display)
+        } else if(input === 'sqrt') {
+            let aaa = Math.sqrt(parseFloat(display))
+            setV2(aaa)
+            setDisplay(aaa)
+            setHistory('sqrt(' + display + ')')
+        } else if(input === '%') {
+            let aaa = 0
+            setV2(aaa)
+            setDisplay(aaa)
+        } else {
             let aaa = v1 + input
             setV1(aaa)
             setDisplay(aaa)

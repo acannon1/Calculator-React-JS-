@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Buttons from './Buttons.js'
 
 const Pad = ({calcHandleClick}) => {
@@ -9,15 +9,15 @@ const Pad = ({calcHandleClick}) => {
     return (
         <div className="pad">
             <div className="padRow">
-                <Buttons display='%' type='action'/>
+                <Buttons padHandleClick={entryHandleClick} display='%' type='action'/>
                 <Buttons padHandleClick={entryHandleClick} display='CE' type='action'/>
                 <Buttons padHandleClick={entryHandleClick} display='C' type='action'/>
                 <Buttons padHandleClick={entryHandleClick} display='Delete' type='action'/>
             </div>
             <div className="padRow">
-                <Buttons display='1/x' type='action'/>
-                <Buttons display='x2' type='action'/>
-                <Buttons display='sqrt' type='action'/>
+                <Buttons padHandleClick={entryHandleClick} display='1/x' type='action'/>
+                <Buttons padHandleClick={entryHandleClick} display='x2' type='action'/>
+                <Buttons padHandleClick={entryHandleClick} display='sqrt' type='action'/>
                 <Buttons padHandleClick={entryHandleClick} display='/' type='action'/>
             </div>
             <div className="padRow">
